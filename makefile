@@ -1,8 +1,8 @@
-tests: MarkdownParse.class MarkdownParseTest.class
-	java -cp .:./lib/* org.junit.runner.JUnitCore MarkdownParseTest
+target: MarkdownParse.class MarkdownParseTest.class
 
 MarkdownParse.class: MarkdownParse.class
-	java -cp .:./lib/* MarkdownParse.java
-
+	javac MarkdownParse.java
+	
 MarkdownParseTest.class: MarkdownParseTest.class
-	java -cp .:./lib/* MarkdownParseTest.java
+	javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java
+
