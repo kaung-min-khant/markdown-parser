@@ -1,6 +1,6 @@
 # Title
 
-[a link!](https://something.com) kfkd
-[another link!](some-page.html) idfid
+[a link!](https://something.com)
+[another link!](some-page.html)
 
 some paragraph text after the links
