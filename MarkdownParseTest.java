@@ -11,12 +11,25 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
+    
     @Test
     public void snippetTest1() throws IOException {
-        Path fileName = Path.of("./snippetTest1.md");
-        String contents = Files.readString(fileName);
-        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), 
-             MarkdownParse.getLinks(contents));
+        List<String> expected = List.of("`google.com", "google.com", "ucsd.edu");
+        List<String> actual = MarkdownParse.getLinks("snippetTest1.md");
+        assertEquals(expected, actual);
     }
+    @Test
+    public void snippetTest2() throws IOException {
+        List<String> expected = List.of("a.com", "a.com(())", "example.com");
+        List<String> actual = MarkdownParse.getLinks("snippetTest2.md");
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void snippetTest3() throws IOException {
+        List<String> expected = List.of( "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        List<String> actual = MarkdownParse.getLinks("snippetTest3.md");
+        assertEquals(expected, actual);
+    }
+
 
 }
